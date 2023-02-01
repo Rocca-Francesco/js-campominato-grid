@@ -40,9 +40,12 @@ header {
 
 /***** main *****/
 main {
+    display: flex;
+    align-items: center;
     width: 100vw;
     background-color: aquamarine;
     padding: 1.5rem;
+    height: calc(100vh - 6rem);
 }
 
 /* griglia base */
@@ -50,7 +53,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     max-width: 500px;
-    height: calc(100vh - 9rem);
     margin: 0 auto;
 }
 
@@ -71,6 +73,12 @@ main {
     text-align: center;
     line-height: 50px;
     font-weight: bold;
+}
+
+.box.active {
+    color: white;
+    border: 2px solid white;
+    background-color: lightskyblue;
 }
 
 /***** footer *****/

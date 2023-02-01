@@ -24,10 +24,10 @@ playBtn.addEventListener(
             boxesQuantity = 100;
         } else if (difficultBtn == "medium") {
             boxesQuantity = 81;
-            gridEl.classList.add('.mediumMode');
+            gridEl.classList.add('mediumMode');
         } else if (difficultBtn == "hard") {
             boxesQuantity = 49;
-            gridEl.classList.add('.hardMode');
+            gridEl.classList.add('hardMode');
         };
         // // creo la griglia tramite la funzione
         boxes(boxesQuantity);
@@ -57,5 +57,12 @@ function boxes(quantity) {
         boxEl.innerHTML = i + 1;
         // seleziono la mia griglia
         document.getElementById("grid").appendChild(boxEl);
+
+        boxEl.addEventListener(
+            "click",
+            function () {
+                boxEl.classList.toggle("active");
+            }
+        )
     }
 }
