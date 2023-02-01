@@ -6,10 +6,24 @@
 
 // collego il mio bottone per iniziare il gioco
 const playBtn = document.getElementById("play");
+// dichiaro una variabile per verificare che il mio bottone sia stato cliccato solo una volta
+let change = 0;
 
 playBtn.addEventListener(
     "click",
     function () {
+        /*********************************************/
+        /**
+         * AGGIUNGO FIX SE VOGLIO CAMBIARE DIFFICOLTA'
+         * 
+         * ps: ho guardato da solo le relative funzioni e come vanno fatte
+         **/
+        if (change != 0) {
+            removeElementsByClass("box");
+        };
+        change++;
+        /*********************************************/
+
         // prendo il valore della difficoltà
         const difficultBtn = document.getElementById("difficult").value;
 
@@ -22,12 +36,16 @@ playBtn.addEventListener(
 
         if (difficultBtn == "easy") {
             boxesQuantity = 100;
+            gridEl.classList.remove('mediumMode');
+            gridEl.classList.remove('hardMode');
         } else if (difficultBtn == "medium") {
             boxesQuantity = 81;
             gridEl.classList.add('mediumMode');
+            gridEl.classList.remove('hardMode');
         } else if (difficultBtn == "hard") {
             boxesQuantity = 49;
             gridEl.classList.add('hardMode');
+            gridEl.classList.remove('mediumMode');
         };
         // // creo la griglia tramite la funzione
         boxes(boxesQuantity);
@@ -62,7 +80,15 @@ function boxes(quantity) {
             "click",
             function () {
                 boxEl.classList.toggle("active");
+                console.log(boxEl);
             }
         )
+    }
+}
+
+function removeElementsByClass(className) {
+    const elements = document.getElementsByClassName(className);
+    while (elements.length > 0) {
+        elements[0].parentNode.removeChild(elements[0]);
     }
 }

@@ -14,8 +14,7 @@ header {
     width: 100vw;
     height: 3rem;
     padding: 1rem;
-    /* debug */
-    background-color: grey;
+    background-color: #ffffff;
 }
 
 #logo {
@@ -43,7 +42,7 @@ main {
     display: flex;
     align-items: center;
     width: 100vw;
-    background-color: aquamarine;
+    background-color: #7fffd4;
     padding: 1.5rem;
     height: calc(100vh - 6rem);
 }
@@ -86,6 +85,5 @@ footer {
     display: flex;
     padding: 1rem;
     height: 3rem;
-    /* debug */
-    background-color: grey;
+    background-color: #ffffff;
 }
